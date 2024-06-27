@@ -1,52 +1,73 @@
-# Netlify Next.js + TypeScript + MUI Starter  
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checklist Veicular</title>
+  <style>
+    /* Estilos opcionais para melhorar a aparência */
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h2>Checklist Veicular - Auditoria de Entrada e Saída</h2>
+  <form action="/submit" method="post" enctype="multipart/form-data">
+    <label for="dono">Dono:</label>
+    <input type="text" id="dono" name="dono" required>
 
-![Netlify Next.js + TS + MUI Starter](https://assets.stackbit.com/docs/ts-nextjs-starter-thumb.png)
+    <label for="ano">Ano:</label>
+    <input type="text" id="ano" name="ano" required>
 
-This is a minimal starting point for new Netlify projects with visual editing. It is built with Next.js, TypeScript, and [MUI](https://mui.com/), and is equipped with [visual editing capabilities](https://docs.netlify.com/visual-editor/visual-editing/). It uses markdown files as the the [Git Content Source](https://docs.netlify.com/create/content-sources/git/).
+    <label for="cor">Cor:</label>
+    <input type="text" id="cor" name="cor" required>
 
-**⚡ View demo:** [ts-mui-starter.netlify.app](https://ts-mui-starter.netlify.app/)
+    <label for="chassi">Chassi:</label>
+    <input type="text" id="chassi" name="chassi" required>
 
-## Features
+    <label for="renavam">Renavam:</label>
+    <input type="text" id="renavam" name="renavam" required>
 
-This is meant to be a simple starting point that demonstrates the use of bringing your own component library, such as MUI.
+    <label for="acessorios">Acessórios:</label>
+    <textarea id="acessorios" name="acessorios" rows="3" required></textarea>
 
-In addition to MUI support, this project contains the following:
+    <label for="motor">Motor:</label>
+    <input type="text" id="motor" name="motor" required>
 
-- **Flexible Pages:** Simple and flexible page model that lets editors add new pages.
-- **Basic Components:** A few basic components to add to new pages.
-- **Layout Elements:** Header and footer elements automatically added to pages.
-- **Component & Template Presets:** Predefined arrangements of content and components for faster editing. [Learn more](https://docs.netlify.com/create/content-presets/).
-- **TypeScript Support:** Components and content are type-safe. (See `types` directory for definitions.)
+    <label for="observacao">Observação:</label>
+    <textarea id="observacao" name="observacao" rows="3"></textarea>
 
-## Getting Started
+    <label for="fotos">Fotos do Veículo (até 30 fotos):</label>
+    <input type="file" id="fotos" name="fotos[]" accept="image/*" multiple required>
 
-The typical development process is to begin by working locally. Clone this repository, then run `npm install` in its root directory.
-
-Run the Next.js development server:
-
-```txt
-cd ts-mui-nextjs-starter
-npm run dev
-```
-
-Install the [Netlify Create CLI](https://www.npmjs.com/package/@stackbit/cli). Then open a new terminal window in the same project directory and run the Netlify Create Dev server:
-
-```txt
-npm install -g @stackbit/cli
-stackbit dev
-```
-
-This outputs your own Netlify visual editor URL. Open this, register, or sign in, and you will be directed to the Netlify visual editor for your new project.
-
-![Next.js Dev + Netlify Create Dev](https://assets.stackbit.com/docs/next-dev-stackbit-dev.png)
-
-## Next Steps
-
-Here are a few suggestions on what to do next if you're new to Netlify visual editor:
-
-- Learn [how Netlify visual editor works](https://docs.netlify.com/visual-editor/overview/)
-- Check [Netlify visual editor reference documentation](https://visual-editor-reference.netlify.com/)
-
-## Support
-
-If you get stuck along the way, get help in our [support forums](https://answers.netlify.com/).
+    <button type="submit">Enviar Auditoria</button>
+  </form>
+</body>
+</html>
